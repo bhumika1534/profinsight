@@ -33,7 +33,7 @@ function Chat() {
     formData.append('url', url || '');
 
     try {
-      const response = await axios.post('http://127.0.0.1:8000/upload', formData, {
+      const response = await axios.post('https://profinsightbackend-4o1p.onrender.com/upload', formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
 
@@ -63,7 +63,7 @@ function Chat() {
     setConversation([...conversation, { type: 'user', text: question }]);
 
     try {
-      const response = await axios.post('http://127.0.0.1:8000/ask', { question });
+      const response = await axios.post('https://profinsightbackend-4o1p.onrender.com/ask', { question });
       if (response.status === 200) {
         setConversation([...conversation, 
           { type: 'user', text: question },

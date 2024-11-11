@@ -180,7 +180,7 @@ function Insights({ profData }) {
       review_text: newReview.reviewText,
     };
     console.log(reviewData);
-    axios.post('http://127.0.0.1:8000/add_review', reviewData)
+    axios.post('https://profinsightbackend-4o1p.onrender.com/add_review', reviewData)
       .then(response => {
         setSnackbar({
           open: true,
@@ -190,7 +190,7 @@ function Insights({ profData }) {
         setNewReview({ professor: '', rating: 5, reviewText: '' });
         const fetchData = async () => {
           try {
-            const response = await axios.get('http://127.0.0.1:8000/professors');
+            const response = await axios.get('https://profinsightbackend-4o1p.onrender.com/professors');
             const transformedData = {
               professors: response.data.map(prof => ({
                 professor_id: prof.professor_id,

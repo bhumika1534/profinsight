@@ -13,7 +13,7 @@ function App() {
     // fetch professor data from the FastAPI backend
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://127.0.0.1:8000/professors');
+        const response = await axios.get('https://profinsightbackend-4o1p.onrender.com/professors');
         const transformedData = {
           professors: response.data.map(prof => ({
             professor_id: prof.professor_id,
